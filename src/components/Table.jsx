@@ -1,7 +1,6 @@
 import { Stack } from "@mui/material";
 
 const Table = ({ itemList, userId }) => {
-  console.log(itemList);
   return (
     <Stack>
       <table style={{ width: "100%" }}>

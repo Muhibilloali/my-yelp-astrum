@@ -2,7 +2,7 @@ import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../firebase/config";
-import { getAuth, signInWithEmailAndPassword, updateCurrentUser } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -15,7 +15,6 @@ const Login = () => {
       .then(() => setWrongMsg(false))
       .catch(() => setWrongMsg(true));
   };
-  console.log(getAuth());
   return (
     <Box sx={{ background: "#f3f4f6" }} height={"100vh"}>
       <Container>

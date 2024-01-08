@@ -14,9 +14,12 @@ import { getAuth, signOut } from "firebase/auth";
 import { db } from "../firebase/config";
 import { getDocs, collection } from "firebase/firestore";
 
-const Main = ({ userName }) => {
+const Main = ({ accountList, getAccountList }) => {
   const [itemList, setItemList] = useState([]);
   const [userId, setUserId] = useState("");
+  const currentEmail = getAuth().currentUser
+
+  const userName = accountList.filter((acc) => acc.email === currentEmail.email )[0]?.userName
 
   const itemCollectionRef = collection(db, "restaurants");
 
@@ -28,22 +31,22 @@ const Main = ({ userName }) => {
         id: doc.id,
         itemId: doc.itemId,
       }));
+
       setItemList(filteredData);
       setUserId(getAuth()?.currentUser?.uid);
-      console.log(getAuth());
     } catch (error) {
       console.log(error);
     }
   };
 
+
   useEffect(() => {
+    getAccountList();
     getItemList();
-  }, []);
+  }, [accountList]);
 
   const logoutHandler = () => {
     signOut(getAuth())
-      .then(() => alert("Logout is success"))
-      .catch((e) => alert(e.error));
   };
 
   return (
@@ -59,14 +62,14 @@ const Main = ({ userName }) => {
           </Stack>
           <Stack direction={"row"} spacing={2}>
             <Typography variant="h4" pt={1.5}>
-              {userName}
+              {userName && userName}
             </Typography>
             <Button>
               <Avatar sx={{ background: "blue" }}></Avatar>
             </Button>
           </Stack>
         </Stack>
-        <Stack direction={'row'} justifyContent={'end'}>
+        <Stack direction={"row"} justifyContent={"end"}>
           <Button onClick={logoutHandler} variant="contained">
             Logout
           </Button>

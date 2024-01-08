@@ -3,8 +3,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import '../firebase/config'
 import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth'
+import { addDoc } from "firebase/firestore";
 
-const Register = () => {
+const Register = ({itemCollectionAccount}) => {
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -26,6 +27,10 @@ const Register = () => {
       createUserWithEmailAndPassword(getAuth(), email, password)
         .then(() => alert('login is success'))
         .catch(() => setErrorMsg(true))
+      addDoc(itemCollectionAccount, {
+        userName,
+        email,
+      } )
     }else{
       setShowConfirmMassage(true)
     }
