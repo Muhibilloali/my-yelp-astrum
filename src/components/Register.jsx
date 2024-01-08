@@ -25,7 +25,6 @@ const Register = ({itemCollectionAccount}) => {
     const confirm = confirmPass()
     if (confirm) {
       createUserWithEmailAndPassword(getAuth(), email, password)
-        .then(() => alert('login is success'))
         .catch(() => setErrorMsg(true))
       addDoc(itemCollectionAccount, {
         userName,
