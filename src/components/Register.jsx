@@ -36,19 +36,20 @@ const Register = ({itemCollectionAccount}) => {
   }
 
   return (
-    <Box sx={{ background: "#f3f4f6" }} height={"100vh"}>
+    <Box sx={{ background: "#79AC78" }} height={"100vh"}>
       <Container>
         <Stack direction={"row"} justifyContent={"center"}>
           <Stack
-            width={"500px"}
+            width={"550px"}
+            height={"400px"}
             sx={{
-              background: "white",
+              background: "#ECE3CE",
               mt: "100px",
               p: "10px 20px",
               borderRadius: "10px",
             }}
           >
-            <Box mb={7}>
+            <Box mb={4}>
               <Typography
                 sx={{
                   textAlign: "center",
@@ -58,9 +59,9 @@ const Register = ({itemCollectionAccount}) => {
               >
                 Sign up for Yelp
               </Typography>
-              <Typography fontSize={15} sx={{ textAlign: "center" }}>
+              {/* <Typography fontSize={15} sx={{ textAlign: "center" }}>
                 Sign up to continue to our platform.
-              </Typography>
+              </Typography>-->*/ }
             </Box>
             <form onSubmit={submitForm}>
               <Grid container spacing={2}>

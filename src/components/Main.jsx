@@ -55,21 +55,21 @@ const Main = ({ accountList, getAccountList }) => {
         <Stack
           direction={"row"}
           justifyContent={"space-between"}
-          sx={{ background: "#fe7e37", borderRadius: "5px" }}
+          sx={{ background: "#638889", color: "black", borderRadius: "5px", width: "100%" }}
         >
-          <Stack width={100}>
+          <Stack width={100} ml={65} >
             <img src="./yelp-logo.png" alt="logo" />
           </Stack>
-          <Stack direction={"row"} spacing={2}>
+          <Stack direction={"row"} spacing={2} >
             <Typography variant="h4" pt={1.5}>
               {userName && userName}
             </Typography>
             <Button>
-              <Avatar sx={{ background: "blue" }}></Avatar>
+              <Avatar sx={{ background: "#000" }}></Avatar>
             </Button>
           </Stack>
         </Stack>
-        <Stack direction={"row"} justifyContent={"end"}>
+        <Stack direction={"row"} justifyContent={"end"} mt={5} >
           <Button onClick={logoutHandler} variant="contained">
             Logout
           </Button>
@@ -77,7 +77,7 @@ const Main = ({ accountList, getAccountList }) => {
         <Stack direction={"row"} spacing={10} mt={5}>
           <Stack
             sx={{
-              background: "#f9bf51",
+              background: "#638889",
               borderRadius: "10px",
               width: "400px",
               height: "355px",
@@ -90,7 +90,7 @@ const Main = ({ accountList, getAccountList }) => {
           </Stack>
           <Stack
             sx={{
-              background: "#471812",
+              background: "#638889",
               borderRadius: "20px",
               padding: "15px 20px 30px",
             }}

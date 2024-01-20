@@ -30,9 +30,9 @@ const Form = ({ itemCollectionRef, getItemList }) => {
   };
 
   return (
-    <Stack p={2}>
-      <Typography textAlign={"center"} fontWeight={"bold"} fontSize={20}>
-        Add Restaurant
+    <Stack p={2} >
+      <Typography textAlign={"center"} fontWeight={"bold"} fontSize={20} >
+        Add Cafe
       </Typography>
       <form onSubmit={onSubmitItem}>
         <Box mb={2}>
@@ -40,7 +40,6 @@ const Form = ({ itemCollectionRef, getItemList }) => {
           <input
             type="text"
             className="form-control"
-            placeholder="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
@@ -51,7 +50,6 @@ const Form = ({ itemCollectionRef, getItemList }) => {
           <input
             type="text"
             className="form-control"
-            placeholder="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             required
@@ -62,15 +60,15 @@ const Form = ({ itemCollectionRef, getItemList }) => {
           <input
             type="text"
             className="form-control"
-            placeholder="city"
             value={city}
             onChange={(e) => setCity(e.target.value)}
             required
           />
         </Box>
         <Stack direction={"row"} justifyContent={"end"}>
-          <Button type="submit" variant="contained" sx={{ width: "170px" }}>
-            Add New
+          <Button type="submit" variant="contained" sx={{ width: "170px", 
+          background: "black", fontWeight: "bold" }}>
+            SUBMİT
           </Button>
         </Stack>
       </form>

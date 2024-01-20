@@ -1,7 +1,7 @@
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../firebase/config";
+import "../firebase/config.js";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
@@ -16,20 +16,20 @@ const Login = () => {
       .catch(() => setWrongMsg(true));
   };
   return (
-    <Box sx={{ background: "#f3f4f6" }} height={"100vh"}>
+    <Box sx={{ background: "#ECE3CE" }} height={"100vh"}>
       <Container>
         <Stack direction={"row"} justifyContent={"center"}>
           <Stack
-            width={"300px"}
-            height={"450px"}
+            width={"450px"}
+            height={"400px"}
             sx={{
-              background: "white",
+              background: "#B5F1CC",
               mt: "100px",
               p: "10px 20px",
               borderRadius: "10px",
             }}
           >
-            <Box mb={7}>
+            <Box mb={2}>
               <Typography
                 sx={{
                   textAlign: "center",
@@ -37,10 +37,10 @@ const Login = () => {
                   fontSize: "25px",
                 }}
               >
-                Sign in for Yelp
+                Welcome to My Yelp
               </Typography>
-              <Typography fontSize={15} sx={{ textAlign: "center" }}>
-                Sign in to continue to our platform.
+              <Typography fontSize={25} sx={{ textAlign: "center" }}>
+              Sign in for Yelp.
               </Typography>
             </Box>
             <form onSubmit={loginHandler}>
@@ -71,7 +71,7 @@ const Login = () => {
                 />
               </Box>
               {wrongMsg && (
-                <Typography mb={3} fontSize={13} color={"red"}>
+                <Typography mb={15} fontSize={13} color={"red"}>
                   Your email or password is Wrong
                 </Typography>
               )}
