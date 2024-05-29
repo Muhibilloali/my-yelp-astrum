@@ -1,31 +1,34 @@
 import { Stack } from "@mui/material";
 
-const Table = ({ itemList, userId }) => {
+const Schedule = ({ itemList, userId }) => {
+  let itemNumber = 0;
+
   return (
     <Stack>
       <table style={{ width: "100%" }}>
         <thead>
           <tr>
-            <th style={{ width: "20px" }}>#</th>
-            <th style={{ width: "200px" }}>Caffee Name</th>
-            <th style={{ width: "300px" }}>Description</th>
-            <th style={{ width: "200px" }}>City</th>
+            <th style={{ width: "20px" }} className="text-center">Number</th>
+            <th style={{ width: "200px" }} className="text-center">Car Model</th>
+            <th style={{ width: "300px" }} className="text-center">Car Color</th>
+            <th style={{ width: "200px" }} className="text-center">Made In City</th>
           </tr>
         </thead>
         <tbody>
-        {itemList
+          {itemList
             ? itemList.map((item, index) => {
-                if ( userId === item.userId) {
+                if (userId === item.userId) {
+                  itemNumber += 1;
                   return (
                     <tr key={index}>
-                      <td>{index +1}</td>
+                      <td>{itemNumber}</td>
                       <td>{item.name}</td>
                       <td>{item.description}</td>
                       <td>{item.city}</td>
                     </tr>
                   );
                 }
-                return ;
+                return null;
               })
             : null}
         </tbody>
@@ -34,4 +37,4 @@ const Table = ({ itemList, userId }) => {
   );
 };
 
-export default Table;
+export default Schedule;

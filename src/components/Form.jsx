@@ -1,7 +1,8 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import { addDoc } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
+import '../index.css';
 
 const Form = ({ itemCollectionRef, getItemList }) => {
   const [name, setName] = useState("");
@@ -30,13 +31,14 @@ const Form = ({ itemCollectionRef, getItemList }) => {
   };
 
   return (
-    <Stack p={2} >
+
+    <Stack p={2} color={ "black" } >
       <Typography textAlign={"center"} fontWeight={"bold"} fontSize={20} >
-        Add Cafe
+        Add Car
       </Typography>
       <form onSubmit={onSubmitItem}>
         <Box mb={2}>
-          <label className="form-label">Name</label>
+          <label className="form-label">Car Model</label>
           <input
             type="text"
             className="form-control"
@@ -46,7 +48,7 @@ const Form = ({ itemCollectionRef, getItemList }) => {
           />
         </Box>
         <Box mb={2}>
-          <label className="form-label">Description</label>
+          <label className="form-label">Car Color</label>
           <input
             type="text"
             className="form-control"
@@ -56,7 +58,7 @@ const Form = ({ itemCollectionRef, getItemList }) => {
           />
         </Box>
         <Box mb={2}>
-          <label className="form-label">City</label>
+          <label className="form-label">Made In City</label>
           <input
             type="text"
             className="form-control"
@@ -67,7 +69,7 @@ const Form = ({ itemCollectionRef, getItemList }) => {
         </Box>
         <Stack direction={"row"} justifyContent={"end"}>
           <Button type="submit" variant="contained" sx={{ width: "170px", 
-          background: "black", fontWeight: "bold" }}>
+          background: "#00c5a4", color: "black", fontWeight: "bold" }}>
             SUBMİT
           </Button>
         </Stack>

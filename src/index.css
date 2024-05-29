@@ -3,16 +3,36 @@ body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffefd8;
+  background-color: #00c5a4;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-table, th, td {
-  border:1px solid #fff;
-  color: #fff;
+table, th {
+  border:1px solid rgb(2, 2, 2);
+  color: rgb(6, 6, 6);
   padding: 5px;
+}
+table, td {
+  border:1px solid rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 5px;
+}
+.form-control {
+  border-color: rgb(0, 0, 0);
+}
+.yelp-icon img {
+  text-align: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+}
+.yelp-person img {
+  margin: 10px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
 }

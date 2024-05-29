@@ -1,7 +1,7 @@
-import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
+import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import '../firebase/config'
+import '../firebase/firebase'
 import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth'
 import { addDoc } from "firebase/firestore";
 
@@ -14,7 +14,7 @@ const Register = ({itemCollectionAccount}) => {
   const [errorMsg, setErrorMsg] = useState(false)
 
   const confirmPass = () => {
-    if (confirmPassword == password) {
+    if (confirmPassword === password) {
       return true
     }
     return false
@@ -36,15 +36,16 @@ const Register = ({itemCollectionAccount}) => {
   }
 
   return (
-    <Box sx={{ background: "#79AC78" }} height={"100vh"}>
+    <Box sx={{ background: "#102C57" }} height={"100vh"}>
       <Container>
         <Stack direction={"row"} justifyContent={"center"}>
           <Stack
-            width={"550px"}
-            height={"400px"}
+            width={"450px"}
+            height={"580px"}
             sx={{
-              background: "#ECE3CE",
-              mt: "100px",
+              background: "#1C1678",
+              color: "white",
+              mt: "150px",
               p: "10px 20px",
               borderRadius: "10px",
             }}
@@ -59,13 +60,13 @@ const Register = ({itemCollectionAccount}) => {
               >
                 Sign up for Yelp
               </Typography>
-              {/* <Typography fontSize={15} sx={{ textAlign: "center" }}>
+               <Typography fontSize={15} sx={{ textAlign: "center" }}>
                 Sign up to continue to our platform.
-              </Typography>-->*/ }
+              </Typography>
             </Box>
             <form onSubmit={submitForm}>
-              <Grid container spacing={2}>
-                <Grid item xs={6}>
+              
+                
                   <Box mb={2}>
                     <label htmlFor="user" className="form-label">
                       User Name
@@ -79,8 +80,21 @@ const Register = ({itemCollectionAccount}) => {
                       required
                     />
                   </Box>
-                </Grid>
-                <Grid item xs={6}>
+
+                  <Box mb={2}>
+                    <label htmlFor="email" className="form-label">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      className="form-control"
+                      onChange={e => setEmail(e.target.value)}
+                      value={email}
+                      required
+                    />
+                  </Box>
+                
                   <Box mb={2}>
                     <label htmlFor="password" className="form-label">
                       Password
@@ -94,23 +108,7 @@ const Register = ({itemCollectionAccount}) => {
                       required
                     />
                   </Box>
-                </Grid>
-                <Grid item xs={6}>
-                  <Box mb={2}>
-                    <label htmlFor="email" className="form-label">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      className="form-control"
-                      onChange={e => setEmail(e.target.value)}
-                      value={email}
-                      required
-                    />
-                  </Box>  
-                </Grid>
-                <Grid item xs={6}>
+                
                   <Box mb={2}>
                     <label htmlFor="password" className="form-label">
                       Confirm Password
@@ -125,8 +123,8 @@ const Register = ({itemCollectionAccount}) => {
                     />
                     {showConfirmMassage && <Typography fontSize={14} color={'red'}>Please Confirm your password</Typography>}
                   </Box>
-                </Grid>
-              </Grid>
+
+              
               {errorMsg && <Typography color={'red'} fontSize={14} >Change you Email or Password</Typography>}
               <Typography mb={3}>
                 You have an account? <Link to={"/login"}>Login</Link>

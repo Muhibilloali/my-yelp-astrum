@@ -1,10 +1,10 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import Main from "./components/Main";
+import Main from "./components/Basic";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import "./firebase/config";
+import "./firebase/firebase";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { db } from "./firebase/config";
+import { db } from "./firebase/firebase";
 import { getDocs, collection } from "firebase/firestore";
 import { useEffect, useState } from "react";
 
